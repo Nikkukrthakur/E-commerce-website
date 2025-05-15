@@ -15,10 +15,7 @@ const cart = () => {
       <Cartpage  name = "Shirt" price="₹1000.00" ImgURL = {Shirt2} returnDays = "7"  dim=" None " Type=""color= ""  Origin = "Tamil nadu" productDisc = "The fabric is made in Cuddalore district in Tamil nadu State. The Cuddalore district is mostly famous in cotton handloom manufacturing. The Shirting is suitable in Summer and Winter."/>
       {/* <Cartpage  name = "Shirt" price="₹1000.00" ImgURL = {Shirt2} returnDays = "7" dim=" " Type="" Origin = "Bihar" productDisc = "The fabric is made in Cuddalore district in Tamil nadu State. The Cuddalore district is mostly famous in cotton handloom manufacturing. The Shirting is suitable in Summer and Winter."/> */}
       <Cartpage  name = "UPPADA JAMDANI BIG BUTA SILK SAREE" price="₹8100.00" dim="width- 47 " Type="" color= "Dual-tone Magenta & Violet" ImgURL = {Saree} returnDays = "7" Origin = "Bihar" productDisc = "Step into elegance with our Royal Radiance Pure Silk Saree, a magnificent fusion of magenta and violet tones designed for timeless grace. Crafted from luxurious pure silk, this saree showcases exquisite golden zari floral motifs woven across the body, creating a subtle yet striking visual harmony."/>
-      
-      
-      
-      
+    
       
       </div>
     </div>

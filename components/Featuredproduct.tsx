@@ -3,7 +3,8 @@ import Image from "next/image";
 import p1 from "@/public/spoon.png";
 import p2 from "@/public/elephant.jpeg";
 import p3 from "@/public/comb.jpg";
-function Featuredproduct(props: any) {
+import Shirt from "@/public/shirt1.jpg"
+const Featuredproduct = (props: any) => {
   return (
     <div className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,16 +15,15 @@ function Featuredproduct(props: any) {
           {/* Product 1 */}
           <div className="bg-white rounded-lg shadow p-4">
             <Image
-              src={p1}
+              src={props.picurl}
               alt=""
               height={200}
               width={200}
               className="w-full h-48 object-cover rounded-lg mb-4"
             />
-            <h3 className="text-lg font-semibold">Wooden Serving</h3>
+            <h3 className="text-lg font-semibold">{props.title}</h3>
             <p className="text-gray-500">
-              Rs-850 – Neem Wooden Serving/Cooking Spatulas & Ladles Set of 5
-              Natural Finish{" "}
+              {props.discrip}
             </p>
           </div>
 

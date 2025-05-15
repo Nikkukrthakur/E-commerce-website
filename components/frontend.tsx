@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Pic from "@/public/product.png";
 
+
 const frontend = () => {
   return (
     <div>
@@ -19,14 +20,14 @@ const frontend = () => {
       </div>
       </div>
 
-      <div className=" bg-slate-500 ">
+      {/* <div className=" bg-slate-500 ">
         <Input
           className="h-28"
           label=""
           placeholder="Search category"
           type="text"
         />
-      </div>
+      </div> */}
      
     </div>
   );
