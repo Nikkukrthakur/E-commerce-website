@@ -35,7 +35,7 @@ const cartpage = (props : any) => {
             <div className="text-orange-600 text-3xl font-bold">{props.price}</div>
             <div>
               <div className="text-sm text-gray-500">IN STOCK</div>
-              <div className="text-red-500 font-semibold">Only 5 left</div>
+              <div className="text-red-500 font-semibold">{props.stock}</div>
             </div>
           </div>
 

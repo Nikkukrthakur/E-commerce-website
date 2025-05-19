@@ -22,6 +22,8 @@ const footer = () => {
             </div>
           </div>
 
+          
+
           {/* Right Section */}
           <div className="max-w-sm w-full">
             <div className="font-semibold text-lg mb-2">

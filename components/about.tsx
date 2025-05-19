@@ -17,13 +17,14 @@ const about = () => {
                 About <span className="text-indigo-900">"ARTISAN ALLEY"</span>
               </div>
               IndiaHandmade is a project by the Ministry of Textiles to
-              highlight the work of rural artisans and weavers. The main goal of
-              this online shopping platform is to display some of the world’s
-              oldest and most traditional Indian crafts.We aim to provide a
-              platform for Handloom Weavers in India and Handicraft Artisans to
-              sell their handloom and handicraft items online in India, paving
-              the way for their financial and social empowerment. This helps in
-              promoting the Artisans & Weavers skills while eliminating the
+              highlight the work of rural artisans and weavers. ARTISAN ALLEY is
+              trying to be a part of that project. The main goal of this online
+              shopping platform is to display some of the world’s oldest and
+              most traditional Indian crafts.We aim to provide a platform for
+              Handloom Weavers in India and Handicraft Artisans to sell their
+              handloom and handicraft items online in India, paving the way for
+              their financial and social empowerment. This helps in promoting
+              the Artisans & Weavers skills while eliminating the
               intermediaries.
             </div>
           </div>
