@@ -3,7 +3,9 @@ import Image from "next/image";
 import p1 from "@/public/spoon.png";
 import p2 from "@/public/elephant.jpeg";
 import p3 from "@/public/comb.jpg";
-import Shirt from "@/public/shirt1.jpg"
+import Shirt from "@/public/shirt1.jpg";
+import bag from "@/public/bag.png";
+import Link from "next/link";
 const Featuredproduct = (props: any) => {
   return (
     <div className="py-12 bg-white">
@@ -13,52 +15,53 @@ const Featuredproduct = (props: any) => {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {/* Product 1 */}
-          <div className="bg-white rounded-lg shadow p-4">
-            <Image
-              src={props.picurl}
-              alt=""
-              height={200}
-              width={200}
-              className="w-full h-48 object-cover rounded-lg mb-4"
-            />
-            <h3 className="text-lg font-semibold">{props.title}</h3>
-            <p className="text-gray-500">
-              {props.discrip}
-            </p>
-          </div>
-
+          <Link href="/cart">
+            <div className="bg-white rounded-lg shadow p-4">
+              <Image
+                src={props.picurl}
+                alt=""
+                height={200}
+                width={200}
+                className="w-full h-48 object-cover rounded-lg mb-4"
+              />
+              <h3 className="text-lg font-semibold">{props.title}</h3>
+              <p className="text-gray-500">{props.discrip}</p>
+            </div>
+          </Link>
           {/* Product 2 */}
-          <div className="bg-white rounded-lg shadow p-4">
-            <Image
-              src={p2}
-              alt=""
-              height={100}
-              width={200}
-              className="w-full h-48 object-cover rounded-lg mb-4"
-            />
-            <h3 className="text-lg font-semibold">Handicraft</h3>
-            <p className="text-gray-500">Rs-1,500.00 –Wooden Ambari Elephant</p>
-          </div>
+          <Link href="/cart">
+            <div className="bg-white rounded-lg shadow p-4">
+              <Image
+                src={props.picurl1}
+                alt=""
+                height={100}
+                width={200}
+                className="w-full h-48 object-cover rounded-lg mb-4"
+              />
+              <h3 className="text-lg font-semibold">{props.title1}</h3>
+              <p className="text-gray-500">{props.discrip1}</p>
+            </div>
+          </Link>
 
           {/* Product 3 */}
-          <div className="bg-white rounded-lg shadow p-4">
-            <Image
-              src={p3}
-              alt=""
-              height={500}
-              width={200}
-              className="w-full h-48 object-cover rounded-lg mb-4"
-            />
+          <Link href="/cart">
+            <div className="bg-white rounded-lg shadow p-4">
+              <Image
+                src={props.picurl2}
+                alt=""
+                height={500}
+                width={200}
+                className="w-full h-48 object-cover rounded-lg mb-4"
+              />
 
-            <h3 className="text-lg  font-semibold">Wood Comb</h3>
-            <p className="text-gray-500">
-              Rs-99 – Neem Wood Pocket Comb | Handmade | Unisex | Eco-Friendly
-            </p>
-          </div>
+              <h3 className="text-lg  font-semibold">{props.title2}</h3>
+              <p className="text-gray-500">{props.discrip2}</p>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Featuredproduct;
