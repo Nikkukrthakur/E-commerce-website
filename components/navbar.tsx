@@ -1,3 +1,5 @@
+"use client";
+import Logoimg from "@/public/logo.jpg";
 import {
   Navbar as HeroUINavbar,
   NavbarContent,
@@ -14,6 +16,7 @@ import { Input } from "@heroui/input";
 import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
+import Image from "next/image";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
@@ -25,8 +28,22 @@ import {
   SearchIcon,
   Logo,
 } from "@/components/icons";
+import { useEffect, useState } from "react";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { useRouter } from "next/navigation";
+import { auth } from "@/firebase";
 
 export const Navbar = () => {
+  const router = useRouter();
+  const [isLoggedin, setIsLoggedIn] = useState(false);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setIsLoggedIn(true);
+      }
+    });
+    return () => unsubscribe();
+  }, []);
   const searchInput = (
     <Input
       aria-label="Search"
@@ -54,6 +71,7 @@ export const Navbar = () => {
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             {/* <Logo /> */}
+            <Image src={Logoimg} alt="Logo" height={20} width={70}/>
             {/* <p className="font-bold text-inherit">ACME</p> */}
           </NextLink>
         </NavbarBrand>
@@ -63,7 +81,7 @@ export const Navbar = () => {
               <NextLink
                 className={clsx(
                   linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium",
+                  "data-[active=true]:text-primary data-[active=true]:font-medium"
                 )}
                 color="foreground"
                 href={item.href}
@@ -75,7 +93,7 @@ export const Navbar = () => {
         </ul>
       </NavbarContent>
 
-      <NavbarContent
+      {/* <NavbarContent
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
@@ -103,6 +121,14 @@ export const Navbar = () => {
           >
             Sponsor
           </Button>
+        </NavbarItem>
+      </NavbarContent> */}
+      <NavbarContent
+        className="hidden sm:flex basis-1/5 sm:basis-full"
+        justify="end"
+      >
+        <NavbarItem className="hidden sm:flex gap-2">
+          <div className={isLoggedin ? "" : "hidden"}> user Logged In </div>
         </NavbarItem>
       </NavbarContent>
 

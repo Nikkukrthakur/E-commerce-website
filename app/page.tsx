@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Frontend from "@/components/frontend";
 import Featuredproduct from "@/components/Featuredproduct";
 import p1 from "@/public/spoon.png";
@@ -11,14 +12,42 @@ import Pot from "@/public/pot.png";
 import Elephant from "@/public/elephant.jpeg";
 import Pot1 from "@/public/pot1.png";
 import Link from "next/link";
+import { auth } from "@/firebase";
+import {  onAuthStateChanged, signOut, User } from "firebase/auth";
+import { useRouter } from "next/navigation";
+import { Button } from "@heroui/button";
 
 function page() {
+  const [isLoggedin, setIsLoggedIn] = useState(false);
+  const router = useRouter();
+
+  const handleLogout = async () => {
+  try {
+    await signOut(auth);
+  } catch (error) {
+    console.error("Error signing out:", error);
+  }
+};
+
+  useEffect(() => {
+    // const authh = getAuth();
+
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        router.push("/login");
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   return (
     <div>
+      {/* <Button>Log Out</Button> */}
       <Frontend />
       <Featuredproduct
-      //  as={Link}
-      //          href="/"
+        //  as={Link}
+        //          href="/"
         discrip="Rs-850 – Neem Wooden Serving/Cooking Spatulas & Ladles Set of 5
               Natural Finish"
         picurl={p1}

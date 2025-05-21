@@ -3,7 +3,7 @@ import React from "react";
 
 const footer = () => {
   return (
-    <div>
+    <div className="mt-16">
       <div className="bg-[#3C2F2F] text-white px-8 py-12 text-sm">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-10">
           {/* Left Section */}

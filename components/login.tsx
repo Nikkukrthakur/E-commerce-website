@@ -9,17 +9,21 @@ import {
   createUserWithEmailAndPassword,
   signInWithPopup,
 } from "firebase/auth";
+import { useRouter } from "next/navigation";
+
 
 const loginpage = () => {
   const [SignInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
+  const router = useRouter();
 
-  const [email, setemail] = useState("");
+  const [email, setemail] = useState("jhgj");
   const [password, setpassword] = useState("");
+  
 
   const handleSignIn = async () => {
     const res = await SignInWithEmailAndPassword(email, password);
     if (res) {
-      alert("OK sign up done");
+      router.push("/");
     } else {
       alert("Sign up fail");
     }
@@ -30,9 +34,7 @@ const loginpage = () => {
 
     if (authh.currentUser) {
       const email = authh.currentUser.email;
-      console.log("User email:", email);
-    } else {
-      console.log("No user is signed in.");
+      // console.log("User email:", email);
     }
   };
 
@@ -89,8 +91,8 @@ const loginpage = () => {
             Sign up and discover our Handmade product!
           </p>
           <Button
-            // as={Link}
-            // href="/"
+            as={Link}
+            href="/signup"
             className="bg-white text-green-500 font-semibold rounded-full hover:bg-gray-100"
           >
             Sign Up
